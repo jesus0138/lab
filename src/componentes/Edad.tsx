@@ -9,18 +9,26 @@ interface props{
 
 
 export default function CustomButton({titulo,textoboton}:props){
+
 const[edad,setedad]=useState("")
+
 const mostrar_anios = () => {
+
     if (edad.trim() === "") {
         Alert.alert("error", "por favor ingrese una edad");
         return;
     }
+
     const edad_numero=Number(edad)
+
     if(isNaN(edad_numero)){
         Alert.alert("error","por favor ingrese un numero valido")
     }
+
     edad_numero>=18 ? Alert.alert("es mayor de edad: ",edad) : Alert.alert("es menor de edad: ",edad);
+
 setedad("")
+
 }
 return(
 <View>

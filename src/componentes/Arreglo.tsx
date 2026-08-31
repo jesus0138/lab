@@ -1,25 +1,36 @@
 import { StyleSheet, Text, View } from 'react-native';
 
 // Arreglo de objetos
-const tareas = [
-  { id: 1, nombre: 'Estudiar React Native', completada: true },
-  { id: 2, nombre: 'Hacer el laboratorio', completada: false },
-  { id: 3, nombre: 'Repasar TypeScript', completada: false },
-  { id: 4, nombre: 'Entregar la tarea', completada: false },
+
+
+const lista_utiles=[
+  { id: 1, nombre: 'Lapiz', completada: true },
+  { id: 2, nombre: 'Cuaderno', completada: true },
+  { id: 3, nombre: 'Borrador', completada: false },
+  { id: 4, nombre: 'Goma', completada: false },
 ];
 
 export default function ListaTareas() {
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Mis tareas</Text>
+      <Text style={styles.titulo}>Mis utiles</Text>
 
-      {tareas.map((tarea) => (
-        <View key={tarea.id} style={styles.item}>
+      {lista_utiles.map(
+        (Lista_utiles) => (
+
+        <View key={Lista_utiles.id} style={styles.item}>
+
           <Text style={styles.texto}>
-            {tarea.completada ? '✓' : '○'} {tarea.nombre}
+
+            {Lista_utiles.completada ? '✓' : '○'} {Lista_utiles.nombre}
+
           </Text>
+
         </View>
-      ))}
+
+      )
+      )
+      }
     </View>
   );
 }
